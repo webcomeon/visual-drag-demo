@@ -94,11 +94,13 @@ export default {
         },
 
         handleDrop(e) {
+            console.log('handleDrop e ==> ', e)
             e.preventDefault()
             e.stopPropagation()
             const index = e.dataTransfer.getData('index')
             const rectInfo = this.editor.getBoundingClientRect()
             if (index) {
+                // 通过拖拽传递过来的index，获取组件，进行深拷贝
                 const component = deepCopy(componentList[index])
                 component.style.top = e.clientY - rectInfo.y
                 component.style.left = e.clientX - rectInfo.x

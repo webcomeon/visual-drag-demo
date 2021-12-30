@@ -24,6 +24,11 @@ export default {
     },
     methods: {
         handleDragStart(e) {
+            console.log('e ==> ', e)
+            // DataTransfer对象
+            // 文章：https://www.zhangxinxu.com/wordpress/2018/09/drag-drop-datatransfer-js/
+            // 自定义拖拽的内容信息。可以重置原生的拖拽内容，或者用来参数传递。
+            // 数据传递
             e.dataTransfer.setData('index', e.target.dataset.index)
         },
     },

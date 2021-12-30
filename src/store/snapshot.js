@@ -35,7 +35,9 @@ export default {
         },
 
         recordSnapshot(state) {
+            console.log('state ==> ', state)
             // 添加新的快照
+            // ++i 值为 (i + 1)
             state.snapshotData[++state.snapshotIndex] = deepCopy(state.componentData)
             // 在 undo 过程中，添加新的快照时，要将它后面的快照清理掉
             if (state.snapshotIndex < state.snapshotData.length - 1) {

@@ -82,6 +82,7 @@ const data = {
             if (index !== undefined) {
                 state.componentData.splice(index, 0, component)
             } else {
+                // 没有传递index时，即为新增
                 state.componentData.push(component)
             }
         },
